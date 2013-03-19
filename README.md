@@ -89,7 +89,7 @@ Returns the new value.
 The default options used by new modal dialogs.
 
 **NOTE:** Changes will be reflected by existing modal dialogs
-unless the option was set explicitly on initialization or with `modal('option', name value)`.
+unless the option was set explicitly on initialization or with `modal('option', name, value)`.
 This is intentional.
 
 ### showFn(callback)
