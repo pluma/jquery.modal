@@ -1,6 +1,6 @@
 # Synopsis
 
-This is a small-ish (~1.8kB minified, <1kB gzipped) modal plugin for jQuery.
+This is a small-ish (1.9kB minified, 0.9kB gzipped) modal plugin for jQuery.
 While most modal plugins try to handle all interactions themselves,
 jQuery.modal only provides the modal dialog and overlay.
 
@@ -92,34 +92,57 @@ The default options used by new modal dialogs.
 unless the option was set explicitly on initialization or with `modal('option', name value)`.
 This is intentional.
 
-### showDuration (default: 200)
+### showFn(callback)
 
-Duration (in milliseconds) for the fade-in animation of the dialog.
+Function to be called in order to reveal the dialog.
+Must call the passed callback when the animation is complete.
 
-### hideDuration (default: 200)
+Default:
+```js
+function(callback) {
+  this.fadeIn(200, callback);
+}
+```
 
-Duration (in milliseconds) for the fade-out animation of the dialog.
+### hideFn(callback)
+
+Function to be called in order to hide the dialog.
+Must call the passed callback when the animation is complete.
+
+Default:
+```js
+function(callback) {
+  this.fadeOut(200, callback);
+}
+```
 
 ## modal.overlay
 
 Options used by the overlay. Most options will only take effect the next time the overlay is shown.
 
-### showDuration (default: 200)
+### showFn(callback)
 
-Duration (in milliseconds) for the fade-in animation of the overlay.
+Function to be called in order to reveal the overlay.
+Must call the passed callback when the animation is complete.
 
-### hideDuration (default: 1)
+Default:
+```js
+function(callback) {
+  this.fadeTo(200, 0.5, callback);
+}
+```
 
-Duration (in milliseconds) for the fade-out animation of the overlay.
+### hideFn(callback)
 
-### opacity (default: 0.5)
+Function to be called in order to hide the overlay.
+Must call the passed callback when the animation is complete.
 
-Opacity of the overlay when fully faded in (minimum: 0.0, maximum: 1.0).
-
-### background (default: 'black')
-
-Background styling of the overlay.
-Any expression recognized by `css('background', value)` can be used.
+Default:
+```js
+function(callback) {
+  this.fadeOut(1, callback);
+}
+```
 
 # Acknowledgements
 
