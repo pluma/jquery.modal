@@ -4,11 +4,60 @@ This is a small-ish (~1.8kB minified, <1kB gzipped) modal plugin for jQuery.
 While most modal plugins try to handle all interactions themselves,
 jQuery.modal only provides the modal dialog and overlay.
 
+# Basic usage example
+
+```js
+var $modal = $('<div/>')
+  .text('Hello World')
+  .css({color: red})
+  .modal()
+  .modal('open')
+  .on('click', function() {
+    $modal.modal('close');
+  });
+```
+
+# More realistic example
+
+## HTML
+```html
+<a class="open-btn">Open</a>
+<div class="my-dialog">
+  <h1>Hello World!</h1>
+  <a class="close-btn">Close</a>
+</div>
+```
+
+## CSS
+```css
+.my-dialog {
+  border: 2px solid black;
+  background-color: papayawhip;
+  color: red;
+  padding: 5px;
+}
+```
+
+## JavaScript
+```js
+var $dialog = $('.my-dialog').modal();
+$dialog.on('click', '.close-btn', function(e) {
+  e.preventDefault();
+  $dialog.modal('close');
+});
+$('.open-btn').on('click', function(e) {
+  e.preventDefault();
+  $dialog.modal('open');
+})
+```
+
 # API
 
 ## modal([options])
 
 Wraps the matched content in a modal dialog intialized with the given options.
+
+**NOTE:** The matched content will be removed from the page if necessary.
 
 ## modal('open')
 
