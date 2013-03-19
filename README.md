@@ -118,7 +118,7 @@ function(callback) {
 
 ## modal.overlay
 
-Options used by the overlay. Most options will only take effect the next time the overlay is shown.
+Options used by the overlay.
 
 ### showFn(callback)
 
