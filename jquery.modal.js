@@ -1,4 +1,4 @@
-//! Copyright (c) 2013 Alan Plum. MIT License
+/*! jquery.modal.js 0.2 Copyright (c) 2013 Alan Plum. MIT License */
 (function($) {
   function _once(init, fn) {
     var result = null;
@@ -48,14 +48,21 @@
       return this;
     }, {
     overlay: {
-      background: 'black',
-      opacity: 0.5,
-      showDuration: 200,
-      hideDuration: 1
+      showFn: function(callback) {
+        this.css('background', 'black');
+        this.fadeTo(200, 0.5, callback);
+      },
+      hideFn: function(callback) {
+        this.fadeOut(1, callback);
+      }
     },
     defaults: {
-      hideDuration: 200,
-      showDuration: 200 
+      showFn: function(callback) {
+        this.fadeIn(200, callback);
+      },
+      hideFn: function(callback) {
+        this.fadeOut(200, callback);
+      }
     },
     _overlay: overlay,
     _Modal: Modal
@@ -73,15 +80,14 @@
     open: _once(function() {
       this.$el.appendTo('body');
     }, function(callback) {
-      var opts = plugin.overlay;
+      var showFn = plugin.overlay.showFn;
       var $el = this.$el;
-      $el.css('background', opts.background);
-      $el.fadeTo(opts.showDuration, opts.opacity, callback);
+      showFn.call($el, callback);
     }),
     close: function(callback) {
-      var opts = plugin.overlay;
+      var hideFn = plugin.overlay.hideFn;
       var $el = this.$el;
-      $el.fadeOut(opts.hideDuration, callback);
+      hideFn.call($el, callback);
     }
   };
   
@@ -120,18 +126,20 @@
         : plugin.defaults[name];
     },
     open: function() {
-      var showDuration = this.getOption('showDuration');
+      var showFn = this.getOption('showFn');
       var $el = this.$el;
       overlay.open(function() {
         $el.appendTo('body').css({
           marginLeft: -($el.width() / 2) + 'px',
           top: (($(window).height() / 2) - ($el.height() / 2)) + 'px'
-        }).fadeIn(showDuration);
+        });
+        showFn.call($el);
       });
     },
     close: function() {
+      var hideFn = this.getOption('hideFn');
       var $el = this.$el;
-      $el.fadeOut(this.getOption('hideDuration'), function() {
+      hideFn.call($el, function() {
         $el.detach();
         overlay.close();
       });
