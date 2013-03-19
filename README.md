@@ -6,10 +6,12 @@ jQuery.modal only provides the modal dialog and overlay.
 
 # Basic usage example
 
+Try it on [jsfiddle](http://jsfiddle.net/uwCLH/).
+
 ```js
 var $modal = $('<div/>')
-  .text('Hello World')
-  .css({color: red})
+  .text('Hello World! Click to dismiss.')
+  .css({color: 'red', background: 'white', cursor: 'pointer'})
   .modal()
   .modal('open')
   .on('click', function() {
@@ -18,6 +20,8 @@ var $modal = $('<div/>')
 ```
 
 # More realistic example
+
+Try it on [jsfiddle](http://jsfiddle.net/HQRDE/).
 
 ## HTML
 ```html
@@ -36,6 +40,10 @@ var $modal = $('<div/>')
   color: red;
   padding: 5px;
 }
+.open-btn, .close-btn {
+    border: 1px solid black;
+    cursor: pointer;
+}
 ```
 
 ## JavaScript
@@ -48,7 +56,7 @@ $dialog.on('click', '.close-btn', function(e) {
 $('.open-btn').on('click', function(e) {
   e.preventDefault();
   $dialog.modal('open');
-})
+});
 ```
 
 # API
