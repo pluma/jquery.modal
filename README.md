@@ -1,6 +1,6 @@
 # Synopsis
 
-This is a small-ish (1.9kB minified, 0.9kB gzipped) modal plugin for jQuery.
+This is a small-ish (~2kB minified, ~1kB gzipped) modal plugin for jQuery.
 While most modal plugins try to handle all interactions themselves,
 jQuery.modal only provides the modal dialog and overlay.
 
