@@ -1,0 +1,29 @@
+{
+  "name": "jquery.modal",
+  "version": "0.2.1",
+  "author": "Alan Plum <me@pluma.io>",
+  "description": "Simple jQuery modal dialog.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pluma/jQuery.modal.git"
+  },
+  "keywords": [
+    "jQuery",
+    "modal",
+    "dialog"
+  ],
+  "dependencies" : {
+    "jquery": ">=1.8"
+  },
+  "devDependencies": {
+    "uglify-js": "1.3.x",
+    "jshint": "0.9.x"
+  },
+  "license": "MIT",
+  "main": "./lib/jQuery.modal.js",
+  "scripts": {
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
+}
