@@ -75,6 +75,12 @@ Reveals the overlay and modal dialog.
 
 Hides the modal dialog and overlay.
 
+## modal('center')
+
+Centers the modal dialog on the screen. This is called automatically every time `open` is called.
+
+Version added: 0.2.1
+
 ## modal('option', name)
 
 Returns the current value of the option `name` for this modal dialog.
