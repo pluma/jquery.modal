@@ -79,7 +79,7 @@ Hides the modal dialog and overlay.
 
 Centers the modal dialog on the screen. This is called automatically every time `open` is called.
 
-Version added: 0.2.1
+Version added: 0.2.3
 
 ## modal('option', name)
 
