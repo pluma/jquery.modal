@@ -154,6 +154,6 @@ function(callback) {
 
 Inspired by [edwardhotchkiss' jQuery.leanerModal](https://github.com/edwardhotchkiss/jquery.leanerModal.js), which is in turn based on [finelysliced's jQuery.leanModal](https://github.com/FinelySliced/leanModal.js).
 
-# License
+# Unlicense
 
-The MIT/Expat license.
+This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying [UNLICENSE](https://github.com/pluma/jquery.modal/blob/master/UNLICENSE) file.
