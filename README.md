@@ -6,7 +6,7 @@ jQuery.modal only provides the modal dialog and overlay.
 
 # Basic usage example
 
-Try it on [jsfiddle](http://jsfiddle.net/uwCLH/).
+Try it on [jsfiddle](http://jsfiddle.net/uwCLH/5/).
 
 ```js
 var $modal = $('<div/>')
@@ -21,7 +21,7 @@ var $modal = $('<div/>')
 
 # More realistic example
 
-Try it on [jsfiddle](http://jsfiddle.net/uwCLH/5/).
+Try it on [jsfiddle](http://jsfiddle.net/HQRDE/14/).
 
 ## HTML
 ```html
