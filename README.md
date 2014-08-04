@@ -21,7 +21,7 @@ var $modal = $('<div/>')
 
 # More realistic example
 
-Try it on [jsfiddle](http://jsfiddle.net/HQRDE/).
+Try it on [jsfiddle](http://jsfiddle.net/uwCLH/5/).
 
 ## HTML
 ```html
