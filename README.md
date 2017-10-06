@@ -1,3 +1,5 @@
+**NOTE:** This package is no longer being maintained. If you are interested in taking over as maintainer, get in touch by creating an issue.
+
 # Synopsis
 
 This is a small-ish (~2kB minified, ~1kB gzipped) modal plugin for jQuery.
